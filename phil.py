@@ -26,7 +26,7 @@ def get_info(api):
 	return data2
 
 info = get_info("insert api key here")
-
+total = 0
 #info = True
 
 if info == False:
@@ -39,4 +39,7 @@ else:
 		if info[i]['alive'] == "1": alive = "Yes" #replace 1 and 0 by Yes or No
 		else: alive = "No"
 		print(fmt.format(i, info[i]['hashrate'], alive )) #print in a neat little table
+		total = total + int(info[i]['hashrate'])
+	print("==========================================")
+	print('{0:17} {1:10}'.format("Total", total, ""))
 	
